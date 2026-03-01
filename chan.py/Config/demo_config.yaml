@@ -1,0 +1,82 @@
+# 缠论框架配置文件
+
+# 数据接口配置
+data_api:
+  # 默认数据源
+  default: "bao_stock"
+  # 富途API配置
+  futu:
+    host: "127.0.0.1"
+    port: 11111
+    user: ""
+    password: ""
+  # AkShare API配置
+  akshare:
+    timeout: 30
+
+# 数据库配置
+database:
+  # 默认数据库类型: sqlite or mysql
+  default: "sqlite"
+  # SQLite配置
+  sqlite:
+    db_path: "./data/chan.db"
+  # MySQL配置
+  mysql:
+    host: "localhost"
+    port: 3306
+    user: "root"
+    password: ""
+    db: "chan"
+
+# 交易配置
+trade:
+  # 交易引擎类型
+  engine: "futu"
+  # 回测配置
+  backtest:
+    start_date: "2020-01-01"
+    end_date: "2023-12-31"
+    initial_cash: 100000
+
+# 模型配置
+model:
+  # 默认模型
+  default: "xgboost"
+  # 模型保存路径
+  save_path: "./models"
+  # 特征配置
+  feature:
+    enable: true
+    list: ["macd", "boll", "kdj", "rsi"]
+
+# 绘图配置
+plot:
+  # 默认绘图引擎
+  engine: "pyecharts"
+  # 图片保存路径
+  save_path: "./output"
+  # COS配置
+  cos:
+    enable: false
+    type: "tencent"
+    secret_id: ""
+    secret_key: ""
+    bucket: ""
+    region: ""
+
+# 日志配置
+log:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # 日志文件路径
+  file: "./logs/chan.log"
+
+# 其他配置
+other:
+  # 线程池大小
+  thread_pool_size: 4
+  # 缓存配置
+  cache:
+    enable: true
+    timeout: 3600
