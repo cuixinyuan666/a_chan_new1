@@ -13,18 +13,10 @@
 
 <p><a href="https://github.com/Vespa314/chan.py/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Vespa314/chan.py" /></a></p>
 
-- 讨论组：<a href="https://t.me/zen_python">Telegram</a>
 - [快速上手指南](./quick_guide.md)
 
 
-**特别说明①**：当前公开部分代码暂时只包含基本的静态计算能力，暂未包含策略类，特征，模型，automl框架，交易引擎对接等；
-
-完整代码22000行左右，公开版约5300行；本README对应的是完整版(可能在某些地方使用上和公开版本代码不一致)，尽量参考[快速上手指南](./quick_guide.md)；
-
-如有使用疑惑，欢迎讨论/邮件联系。
-
-
-**特别说明②**：依赖最低版本为python3.11；由于本项目是高度计算密集型，鉴于python3.11发布且运算速度大幅提升，实测相比于python 3.8.5计算时间缩短约16%，故后续开发均基于python3.11；
+**特别说明**：依赖最低版本为python3.11；由于本项目是高度计算密集型，鉴于python3.11发布且运算速度大幅提升，实测相比于python 3.8.5计算时间缩短约16%，故后续开发均基于python3.11；
 
 
 ---
@@ -86,7 +78,6 @@
       - [港股](#港股)
       - [美股](#美股)
   - [Star history](#star-history)
-  - [咖啡？NO!](#咖啡no)
 
 ## 功能介绍
 本框架从使用深度上来讲，分四种不同的级别：
@@ -1470,11 +1461,4 @@ class COpenQuotaGen:
 以上！
 
 ## Star history
-
 ![Star History Chart](https://api.star-history.com/svg?repos=Vespa314/chan.py&type=Date)
-
-
-## 咖啡？NO!
-如果你觉得这个项目对你有帮助或有启发，可以请我喝一杯。。额。。咖啡和牛奶以外的东西，毕竟我喝这两种会拉肚子。。
-
-<img src="./Image/coffee.jpeg" width="300"/>
