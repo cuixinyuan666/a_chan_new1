@@ -1460,5 +1460,38 @@ class COpenQuotaGen:
 
 以上！
 
+## chan_test.py 合并版本说明
+
+### 功能特性
+- 完整整合了项目中所有相关代码模块，包括缠论核心计算、数据接口、绘图功能和GUI界面
+- 保留了原文件 `ashare_bsp_scanner_gui.py` 的全部功能，包括A股缠论买点扫描、单股分析和批量扫描
+- 支持多级别缠论计算，包括笔、线段、中枢、买卖点等核心元素
+- 集成了Baostock API数据接口，可直接获取A股市场数据
+- 提供基于pyecharts的可视化功能，支持K线、指标和缠论元素的绘制
+- 实现了多线程处理，避免UI阻塞，提高扫描效率
+
+### 实现原理
+- **代码整合**：将项目中所有核心模块（Chan.py、ChanConfig.py、Common/CEnum.py、KLine/KLine_Unit.py、Bi/Bi.py、Seg/Seg.py、ZS/ZS.py、BuySellPoint/BS_Point.py、DataAPI/BaoStockAPI.py、Plot/PlotDriver.py等）整合到单个文件中
+- **依赖处理**：通过合理的类定义顺序解决了模块间的依赖关系，确保所有类和函数在使用前已定义
+- **命名冲突解决**：处理了潜在的命名冲突，例如将中文枚举成员 `震荡` 重命名为 `ZHENGDANG`
+- **路径引用修复**：统一了文件路径格式，使用正斜杠 `/` 替代反斜杠 `\`，避免了路径转义问题
+- **属性访问修正**：修复了属性访问错误，例如将 `kl.time` 修正为 `kl.time_begin`
+
+### 使用方法
+1. **直接运行**：在项目根目录下执行 `python chan_test.py` 启动GUI界面
+2. **GUI操作**：
+   - 在主界面输入股票代码（如：sh.600000）
+   - 选择K线级别（日线、30分钟线等）
+   - 点击"分析"按钮进行单股缠论分析
+   - 点击"批量扫描"按钮进行多股扫描，可设置扫描范围和条件
+   - 分析结果将在界面下方显示，包括K线图、缠论元素和买卖点标记
+
+### 与原文件的关系
+- **功能一致**：`chan_test.py` 完全实现了原文件 `chan.py/App/ashare_bsp_scanner_gui.py` 的全部功能
+- **代码结构**：保留了原文件的GUI类结构和核心功能逻辑
+- **增强整合**：额外整合了项目中所有相关代码模块，使其成为一个独立完整的可执行文件
+- **便于部署**：单文件结构便于部署和分发，无需处理复杂的模块依赖
+- **保持兼容**：与原文件使用相同的数据接口和配置参数，确保用户体验一致
+
 ## Star history
 ![Star History Chart](https://api.star-history.com/svg?repos=Vespa314/chan.py&type=Date)
